@@ -87,11 +87,14 @@ class alumnoController extends Controller
                 'sexo'=>['required','string','max:10'],
                 'id_materia'=>['required','numeric'],
             ]);
-            if($exists){
+            /**
+             * if($exists){
                 Log::warning("Intento de creación de registro duplicado en la base de datos \n-> METHOD: guardar() \n -> CONTROLLER: alumnosController.php");
                 Log::error("Error -> codigo de respuesta: 409");
                 return response()->json(['error' => 'el alumno ya fue registrado', 'estado' => ['code' => 409]], 409);
-            }
+            *}
+             */
+            
 
             if ($request->id == 0) {
                 $alumno = new m_alumno();

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\alumnoController;
 use App\Http\Controllers\maestroController;
 use App\Http\Controllers\materiaController;
+use App\Http\Controllers\AsisntenciaController;
 
 
 /*
@@ -38,6 +39,13 @@ Route::post('/materia', [materiaController::class, 'guardar']);
 Route::post('/materia/borrar', [materiaController::class, 'borrar']);
 
 Route::get('/combo_materias', [materiaController::class, 'combo']);
+
+ #asistencia
+
+ Route::post('/asistencias',[AsisntenciaController::class, 'index'])->name('API\asistencias');
+ Route::post('/asistencia',[AsisntenciaController::class,'store'])->name('Api\storeAsistencia');
+
+
 
 Route::post('login', function(Request $request){
     if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){

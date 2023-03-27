@@ -85,7 +85,7 @@ class alumnoController extends Controller
                 'matricula' => ['required', 'numeric', 'max_digits:10', 'min_digits:10'],
                 'edad' => ['required', 'numeric', 'max_digits:2'],
                 'sexo'=>['required','string','max:10'],
-                'id_materia'=>['required','numeric'],
+                'id_materia'=>['required'],
             ]);
             /**
              * if($exists){
@@ -108,7 +108,7 @@ class alumnoController extends Controller
             $alumno->matricula = $request->matricula;
             $alumno->sexo = $request->sexo;
             $alumno->edad = $request->edad;
-            $alumno->id_materia = $request->id_materia;
+            $alumno->id_materia = $request->json('id_materia.code');
             $alumno->save();
 
             return response()->json([$alumno],201);

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Alumno;
 use App\Models\Asisntencia;
+use App\Models\Maestro;
 use App\Models\Materia;
 use Illuminate\Database\Seeder;
 
@@ -24,15 +25,37 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
+        Maestro::factory()->create([
+            'nombremae' => 'Pedro',
+            'app' => 'Villegas',
+            'apm'=>'Gonzalez',
+            'nocedula' => '2521160032',
+            'edad'=>20,
+            'sexo'=>'M',
+        ]);
+
+        Maestro::factory()->create([
+            'nombremae' => 'Raul',
+            'app' => 'Villegas',
+            'apm'=>'Gonzalez',
+            'nocedula' => '2521160034',
+            'edad'=>20,
+            'sexo'=>'M',
+        ]);
+
+
         Materia::factory()->create([
             'nombre' => 'Physics',
             'duracion'=>'5hrs',
-            'dias'=>5
+            'dias'=>5,
+            'id_maestro'=>1,
         ]);
         Materia::factory()->create([
             'nombre' => 'Math',
             'duracion'=>'3hrs',
-            'dias'=>4
+            'dias'=>4,
+            'id_maestro'=>1,
+
         ]);
 
         Alumno::factory()->create([

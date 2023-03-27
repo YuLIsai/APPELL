@@ -5,10 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Asisntencia extends Model
+class m_verpase extends Model
 {
-
-    use HasFactory;
-
-    Protected $table = "asisntencias";
+    protected $table = "asisntencias";
 }

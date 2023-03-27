@@ -7,7 +7,7 @@ use App\Http\Controllers\alumnoController;
 use App\Http\Controllers\maestroController;
 use App\Http\Controllers\materiaController;
 use App\Http\Controllers\AsisntenciaController;
-
+use App\Http\Controllers\verpase_controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,11 +39,14 @@ Route::post('/materia', [materiaController::class, 'guardar']);
 Route::post('/materia/borrar', [materiaController::class, 'borrar']);
 
 Route::get('/combo_materias', [materiaController::class, 'combo']);
+Route::get('/combo_maestros', [maestroController::class, 'getTeachers']);
 
  #asistencia
 
  Route::post('/asistencias',[AsisntenciaController::class, 'index'])->name('API\asistencias');
  Route::post('/asistencia',[AsisntenciaController::class,'store'])->name('Api\storeAsistencia');
+
+ Route::get('/verpaselista',[verpase_controller::class,'lista']); //ruta para ver las asistencias
 
 
 

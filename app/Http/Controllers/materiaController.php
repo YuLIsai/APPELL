@@ -45,6 +45,7 @@ class materiaController extends Controller
                 'nombre' => ['required', 'max:90', 'string', 'regex:/^[a-zA-Z]+(\s*[a-zA-ZÁÉÍÓÚáéíúó]*)*[a-zA-ZñÑ]+$/'],
                 'duracion' => ['required', 'max:90', 'string', 'regex:/^[a-zA-Z0-9]+(\s*[a-zA-ZÁÉÍÓÚáéíúó]*)*[a-zA-ZñÑ]+$/'],
                 'dias' => ['required', 'numeric', 'max_digits:3'],
+                'id_maestro'=>['required']
             ]);
             /**
              * if ($exists) {
@@ -62,6 +63,8 @@ class materiaController extends Controller
             $materia->nombre = $request->nombre;
             $materia->duracion = $request->duracion;
             $materia->dias = $request->dias;
+            $materia->id_maestro=$request->json('id_maestro.code');
+
 
             $materia->save();
 

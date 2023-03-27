@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('maestros', function (Blueprint $table) {
-            $table->bigInteger('id_materia')->nullable();
+        Schema::table('materias', function (Blueprint $table) {
+            $table->bigInteger('id_maestro')->nullable();
 
-            $table->foreign('id_materia')->references('id')->on('materias');
+            $table->foreign('id_maestro')->references('id')->on('maestros');
 
         });
     }
